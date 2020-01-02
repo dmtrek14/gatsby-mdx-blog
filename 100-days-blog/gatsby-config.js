@@ -1,11 +1,14 @@
-module.exports = {
-  siteMetadata: {
-    title: `100 Days of Gatsby Blog`,
+const siteMetadata = {
+  title: `100 Days of Gatsby Blog`,
     description: `Taking the Gatsby challenge.`,
-    author: `@dmtrek14`,
-  },
+    author: `@dmtrek14`
+};
+
+module.exports = {
+  siteMetadata: siteMetadata,
   plugins: [
     `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-styled-components`,
     {
       resolve: `gatsby-plugin-mdx`,
       options: {
