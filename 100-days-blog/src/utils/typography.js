@@ -3,6 +3,7 @@ import Typography from "typography"
 //import elkGlenTheme from "typography-theme-elk-glen";
 import oceanBeachTheme from "typography-theme-ocean-beach";
 oceanBeachTheme.baseFontSize = '20px';
+oceanBeachTheme.bodyGrayHue = 'warm';
 
 const typography = new Typography(oceanBeachTheme)
 

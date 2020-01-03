@@ -7,7 +7,7 @@ export default ({ data }) => {
   return (
       <Layout>
       <div>
-      <h1>Posts About My Journey</h1>
+      <h1>Posts About My Journey with Gatsby</h1>
       <p>{data.allMdx.totalCount} Posts</p>
         {data.allMdx.edges.map(
           ({ node}) => (
