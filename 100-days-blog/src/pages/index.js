@@ -7,15 +7,17 @@ export default ({ data }) => {
   return (
       <Layout>
       <div>
-      <h1>100 Days of Posts</h1>
+      <h1>Posts About My Journey</h1>
       <p>{data.allMdx.totalCount} Posts</p>
         {data.allMdx.edges.map(
           ({ node}) => (
             <div key={node.id}>
-              <Link to={node.fields.slug}>
-                <h1>{node.frontmatter.title}</h1>
-                </Link>
-                <p>{node.frontmatter.date}</p>
+             
+                <h2> 
+                <Link to={node.fields.slug}>{node.frontmatter.title}</Link>
+                </h2>
+                
+                <p class="date">{node.frontmatter.date}</p>
                 
                 <p>{node.excerpt}</p>
               
