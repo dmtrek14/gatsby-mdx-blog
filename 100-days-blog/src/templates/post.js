@@ -1,8 +1,10 @@
-import React from "react"
+import React from "react";
 import { MDXRenderer } from 'gatsby-plugin-mdx';
-import { graphql, Link } from "gatsby"
-import Layout from "../components/layout"
-import SEO from "../components/seo"
+import { graphql, Link } from "gatsby";
+import Layout from "../components/layout";
+import SEO from "../components/seo";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+
 
 export default ({ data, pageContext })=> {
 const { frontmatter, body, excerpt } = data.mdx;
@@ -18,7 +20,7 @@ return (
       <>
       {previous && (
         <Link to={previous.fields.slug}>
-          <p>{previous.frontmatter.title}</p>
+          <p><FontAwesomeIcon icon="long-arrow-alt-left" /> {previous.frontmatter.title}</p>
         </Link>
       )}
       </>
@@ -27,7 +29,7 @@ return (
       <>
         { next && (
           <Link to={next.fields.slug}>
-            <p>{next.frontmatter.title}</p>
+            <p>{next.frontmatter.title} <FontAwesomeIcon icon="long-arrow-alt-right" /></p>
           </Link>
         )
         }

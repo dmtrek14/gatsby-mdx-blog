@@ -5,11 +5,14 @@
  * See: https://www.gatsbyjs.org/docs/use-static-query/
  */
 
-import React from "react"
-import PropTypes from "prop-types"
-import { useStaticQuery, graphql } from "gatsby"
-
+import React from "react";
+import PropTypes from "prop-types";
+import { useStaticQuery, graphql } from "gatsby";
 import Header from "./header"
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { faLongArrowAltLeft, faLongArrowAltRight  } from '@fortawesome/free-solid-svg-icons'
+
+library.add(faLongArrowAltLeft, faLongArrowAltRight)
 //import "./layout.css"
 
 const Layout = ({ children }) => {
