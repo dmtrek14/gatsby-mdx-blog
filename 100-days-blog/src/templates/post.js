@@ -16,25 +16,40 @@ return (
       <h1>{frontmatter.title}</h1>
     </div>
     <MDXRenderer>{body}</MDXRenderer>
-    {previous === false ? null : (
+    <div style={{
+      marginTop: `3rem`
+    }}>
+{previous === false ? null : (
       <>
       {previous && (
+        <span style={{
+          float: `left`
+        }}>
         <Link to={previous.fields.slug}>
-          <p><FontAwesomeIcon icon="long-arrow-alt-left" /> {previous.frontmatter.title}</p>
+          <FontAwesomeIcon icon="long-arrow-alt-left" /> {previous.frontmatter.title}
         </Link>
+        </span>
+        
       )}
       </>
     )}
     {next === false ? null : (
       <>
         { next && (
+          <span style={{
+            float: `right`
+          }}>
           <Link to={next.fields.slug}>
-            <p>{next.frontmatter.title} <FontAwesomeIcon icon="long-arrow-alt-right" /></p>
+            {next.frontmatter.title} <FontAwesomeIcon icon="long-arrow-alt-right" />
           </Link>
+          </span>
+          
         )
         }
       </>
     )}
+    </div>
+    
   </Layout>
 )
 }

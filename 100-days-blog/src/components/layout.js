@@ -38,11 +38,17 @@ const Layout = ({ children }) => {
         }}
       >
         <main>{children}</main>
-        <footer>
+        <footer style={{
+          position: `relative`,
+          clear: `both`,
+          width: `100%`,
+          padding: `1rem`
+        }}>
           © {new Date().getFullYear()}, Built with
           {` `}
           <a href="https://www.gatsbyjs.org">Gatsby</a>&nbsp;
            by &nbsp;<a href="https://github.com/dmtrek14">@dmtrek14</a>
+
         </footer>
       </div>
     </>
