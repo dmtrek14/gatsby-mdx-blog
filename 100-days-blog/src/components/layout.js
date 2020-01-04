@@ -5,11 +5,14 @@
  * See: https://www.gatsbyjs.org/docs/use-static-query/
  */
 
-import React from "react"
-import PropTypes from "prop-types"
-import { useStaticQuery, graphql } from "gatsby"
-
+import React from "react";
+import PropTypes from "prop-types";
+import { useStaticQuery, graphql } from "gatsby";
 import Header from "./header"
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { faLongArrowAltLeft, faLongArrowAltRight  } from '@fortawesome/free-solid-svg-icons'
+
+library.add(faLongArrowAltLeft, faLongArrowAltRight)
 //import "./layout.css"
 
 const Layout = ({ children }) => {
@@ -35,11 +38,17 @@ const Layout = ({ children }) => {
         }}
       >
         <main>{children}</main>
-        <footer>
+        <footer style={{
+          position: `relative`,
+          clear: `both`,
+          width: `100%`,
+          padding: `1rem`
+        }}>
           © {new Date().getFullYear()}, Built with
           {` `}
           <a href="https://www.gatsbyjs.org">Gatsby</a>&nbsp;
            by &nbsp;<a href="https://github.com/dmtrek14">@dmtrek14</a>
+
         </footer>
       </div>
     </>

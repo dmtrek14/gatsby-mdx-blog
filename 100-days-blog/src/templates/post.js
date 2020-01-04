@@ -1,11 +1,14 @@
-import React from "react"
+import React from "react";
 import { MDXRenderer } from 'gatsby-plugin-mdx';
-import { graphql } from "gatsby"
-import Layout from "../components/layout"
-import SEO from "../components/seo"
+import { graphql, Link } from "gatsby";
+import Layout from "../components/layout";
+import SEO from "../components/seo";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 
-export default ({ data })=> {
-const { frontmatter, body, excerpt } = data.mdx
+
+export default ({ data, pageContext })=> {
+const { frontmatter, body, excerpt } = data.mdx;
+const { previous, next } = pageContext;
 return (
   <Layout>
    <SEO title={frontmatter.title} description={excerpt} />
@@ -13,6 +16,40 @@ return (
       <h1>{frontmatter.title}</h1>
     </div>
     <MDXRenderer>{body}</MDXRenderer>
+    <div style={{
+      marginTop: `3rem`
+    }}>
+{previous === false ? null : (
+      <>
+      {previous && (
+        <span style={{
+          float: `left`
+        }}>
+        <Link to={previous.fields.slug}>
+          <FontAwesomeIcon icon="long-arrow-alt-left" /> {previous.frontmatter.title}
+        </Link>
+        </span>
+        
+      )}
+      </>
+    )}
+    {next === false ? null : (
+      <>
+        { next && (
+          <span style={{
+            float: `right`
+          }}>
+          <Link to={next.fields.slug}>
+            {next.frontmatter.title} <FontAwesomeIcon icon="long-arrow-alt-right" />
+          </Link>
+          </span>
+          
+        )
+        }
+      </>
+    )}
+    </div>
+    
   </Layout>
 )
 }
@@ -26,9 +63,6 @@ query PostsBySlug($slug: String!){
     frontmatter {
       date
       title
-    }
-    internal {
-      content
     }
     body
     excerpt(pruneLength: 100)
