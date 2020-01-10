@@ -16,6 +16,17 @@ return (
       <h1>{frontmatter.title}</h1>
     </div>
     <MDXRenderer>{body}</MDXRenderer>
+    <hr/>
+    <div>Tags: {frontmatter.tags.map(tag => (
+        <span style={
+          {
+            padding:`4px`,
+            backgroundColor: `#950451`,
+            color: `white`,
+            borderRadius: `4px`,
+            marginRight: `0.8rem`
+          }}>{tag}</span>
+    ))}</div>
     <div style={{
       marginTop: `3rem`
     }}>
@@ -63,6 +74,7 @@ query PostsBySlug($slug: String!){
     frontmatter {
       date
       title
+      tags
     }
     body
     excerpt(pruneLength: 100)

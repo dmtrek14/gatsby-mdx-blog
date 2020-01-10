@@ -41,6 +41,7 @@ query {
         frontmatter {
           title
           date(formatString: "YYYY MMMM D")
+          tags
         }
         excerpt(pruneLength: 200)
         id
