@@ -8,7 +8,8 @@ export default ({ data }) => {
       <Layout>
       <div>
       <h1>Posts About My Journey with Gatsby</h1>
-      <p>{data.allMdx.totalCount} Posts</p>
+      <div style={{float: `left`}}>{data.allMdx.totalCount} Posts</div>
+      <div style={{float:`right`}}><Link to="/tags/">Tags</Link></div>
         {data.allMdx.edges.map(
           ({ node}) => (
             <div key={node.id}>
