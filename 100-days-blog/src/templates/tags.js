@@ -26,7 +26,7 @@ const Tags = ({ pageContext, data }) => {
           )
         })}
       </ul>
-      <Link to="/tags">All tags</Link>
+      <Link to="/tags" className="lcars-link-button-yellow">All tags</Link>
     </div>
     </Layout>
   )

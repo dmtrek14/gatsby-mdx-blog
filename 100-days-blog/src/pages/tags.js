@@ -21,12 +21,10 @@ const TagsPage = ({
     <Helmet title={title} />
     <div>
       <h1>Tags</h1>
-      <ul style={{
-        listStyle: `none`
-      }}>
+      <ul className="tag-list">
         {group.map(tag => (
           <li key={tag.fieldValue}>
-            <Link to={`/tags/${kebabCase(tag.fieldValue)}/`}>
+            <Link to={`/tags/${kebabCase(tag.fieldValue)}/`} className="lcars-link-button-yellow">
               {tag.fieldValue} ({tag.totalCount})
             </Link>
           </li>

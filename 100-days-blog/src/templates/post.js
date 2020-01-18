@@ -23,17 +23,18 @@ return (
     ))}</div>
     <div style={{
       marginTop: `3rem`
-    }}>
+    }} className="post-info">
 {previous === false ? null : (
       <>
       {previous && (
-        <span style={{
+        <div style={{
           float: `left`
         }}>
-        <Link to={previous.fields.slug}>
+        <Link to={previous.fields.slug} className="lcars-link-button-yellow">
           <FontAwesomeIcon icon="long-arrow-alt-left" /> {previous.frontmatter.title}
         </Link>
-        </span>
+
+        </div>
         
       )}
       </>
@@ -41,13 +42,13 @@ return (
     {next === false ? null : (
       <>
         { next && (
-          <span style={{
+          <div style={{
             float: `right`
           }}>
-          <Link to={next.fields.slug}>
+          <Link to={next.fields.slug} className="lcars-link-button-yellow">
             {next.frontmatter.title} <FontAwesomeIcon icon="long-arrow-alt-right" />
           </Link>
-          </span>
+          </div>
           
         )
         }

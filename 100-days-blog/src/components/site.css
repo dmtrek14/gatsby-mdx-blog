@@ -88,6 +88,7 @@ nav {
 main {
     grid-column-start: 2;
     min-height: 80vh;
+    line-height: 1.8;
 }
 @media (max-width: 768px){
     .container {
@@ -97,17 +98,24 @@ main {
     }
     main {
         grid-column-start: 1;
-        padding: 0.5rem;
+        padding: 1.5rem;
         justify-self: center;
     }
 }
 .post-info {
     display: grid;
-    grid-template-rows: none;
-    grid-template-columns: 1fr auto auto;
-    text-align: right;
-    justify-items: start;
+    justify-items: center;
+    grid-row-gap: 15px;
 }
+@media (min-width: 768px) {
+    .post-info  {
+      grid-template-rows: none;
+      grid-template-columns: 1fr auto auto;
+      text-align: right;
+      justify-items: start;
+    }
+
+  }
 .lcars-link-button-light-blue {
     background-color: #5599ff;
     padding: 0.3rem 0.8rem 0.3rem 0.8rem;
@@ -124,6 +132,7 @@ a.lcars-link-button-light-blue  {
     padding: 0.3rem 0.8rem 0.3rem 0.8rem;
     border-radius: 3em;
     color: black;
+    margin-right: 0.2rem;
 }
 
 a.lcars-link-button-purple  {
@@ -142,6 +151,28 @@ a.lcars-link-button-pink  {
     font-weight: bold;
     text-decoration: none;
 }
+.lcars-link-button-yellow {
+    background-color: #ffc062;
+    padding: 0.3rem 0.8rem 0.3rem 0.8rem;
+    border-radius: 3em;
+    color: black;
+}
+a.lcars-link-button-yellow  {
+    color: black;
+    font-weight: bold;
+    text-decoration: none;
+}
+/* .lcars-link-button-yellow::before  {
+    content:"  ";
+    white-space: pre;
+    border-left: 2px solid black;
+} */
+.tag-list {
+    list-style: none;
+}
+.tag-list > li {
+    margin-top: 0.5rem;
+}
 /*FOOTER*/
   footer {
     display: grid;
@@ -153,6 +184,7 @@ a.lcars-link-button-pink  {
   footer > div {
     min-height: 50px;
     padding: 1rem 4rem;
+    line-height: 2.2;
   }
   
   @media (min-width: 768px) {
