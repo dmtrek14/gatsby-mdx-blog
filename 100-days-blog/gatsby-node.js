@@ -46,6 +46,23 @@ exports.createPages = async ({graphql, actions})=> {
     return
   }
   var posts = result.data.posts.edges;
+  const postsPerPage = 5
+  const numPages = Math.ceil(posts.length / postsPerPage)
+  Array.from({ length: numPages }).forEach((_, i) => {
+    createPage({
+      path: i === 0 ? `/` : `/${i + 1}`,
+      component: path.resolve("./src/templates/post-list.js"),
+      context: {
+        limit: postsPerPage,
+        skip: i * postsPerPage,
+        numPages,
+        currentPage: i + 1,
+      },
+    })
+  })
+
+
+
   posts.forEach(({node}, index) => {
       const previous = index === 0 ? null : posts[index - 1].node;
       const next = index === posts.length - 1 ? null : posts[index + 1].node;

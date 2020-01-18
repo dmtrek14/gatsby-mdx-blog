@@ -167,6 +167,9 @@ a.lcars-link-button-yellow  {
     white-space: pre;
     border-left: 2px solid black;
 } */
+pre {
+    background-color: black;
+}
 .tag-list {
     list-style: none;
 }
