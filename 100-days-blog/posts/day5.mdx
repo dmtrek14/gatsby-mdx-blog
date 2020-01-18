@@ -6,3 +6,29 @@ tags: ["tags", "new page"]
 ---
 
 For a quick bit of work on this tonight, I added a tags page with a list of all tags used in the blog so far. I'll keep work on enhancing this, so that I can show how many posts have each tag, and perhaps have a listing of blog post titles under each tag.
+
+I added a tags field to the frontmatter of the mdx file. For this post the tags field looks like this:
+```
+tags: ["tags", "new page"]
+```
+
+My query to get the tags is:
+```js
+export const query = graphql`
+query {
+    allMdx(sort: {fields: frontmatter___tags}) {
+        edges {
+            node {
+              fields {
+                slug
+              }
+              id
+            }
+          }
+          group(field: frontmatter___tags) {
+            fieldValue
+          }
+      }
+}
+`
+```
