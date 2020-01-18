@@ -18,14 +18,8 @@ return (
     <MDXRenderer>{body}</MDXRenderer>
     <hr/>
     <div>Tags: {frontmatter.tags.map(tag => (
-        <span style={
-          {
-            padding:`4px`,
-            backgroundColor: `#950451`,
-            color: `white`,
-            borderRadius: `4px`,
-            marginRight: `0.8rem`
-          }}>{tag}</span>
+        <span className="lcars-link-button-purple">{tag}</span>
+           
     ))}</div>
     <div style={{
       marginTop: `3rem`

@@ -7,9 +7,12 @@ export default ({ data }) => {
   return (
       <Layout>
       <div>
-      <h1>Posts About My Journey with Gatsby</h1>
-      <div style={{float: `left`}}>{data.allMdx.totalCount} Posts</div>
-      <div style={{float:`right`}}><Link to="/tags/">Tags</Link></div>
+      <h1>My Journey with Gatsby</h1>
+      <div className="post-info">
+      <div className="posts"><span className="lcars-link-button-pink">{data.allMdx.totalCount} Posts</span></div>
+      <div className="tags"><Link className="lcars-link-button-purple" to="/tags/">Tags</Link></div>
+      </div>
+
         {data.allMdx.edges.map(
           ({ node}) => (
             <div key={node.id}>
