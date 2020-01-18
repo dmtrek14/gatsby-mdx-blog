@@ -27,9 +27,7 @@ return (
 {previous === false ? null : (
       <>
       {previous && (
-        <div style={{
-          float: `left`
-        }}>
+        <div >
         <Link to={previous.fields.slug} className="lcars-link-button-yellow">
           <FontAwesomeIcon icon="long-arrow-alt-left" /> {previous.frontmatter.title}
         </Link>
@@ -42,9 +40,7 @@ return (
     {next === false ? null : (
       <>
         { next && (
-          <div style={{
-            float: `right`
-          }}>
+          <div >
           <Link to={next.fields.slug} className="lcars-link-button-yellow">
             {next.frontmatter.title} <FontAwesomeIcon icon="long-arrow-alt-right" />
           </Link>

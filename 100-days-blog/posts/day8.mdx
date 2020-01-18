@@ -1,0 +1,10 @@
+---
+title: Wired up pagination for list of posts
+date: 2020-01-18
+published: true
+tags: ["pagination", "enhancements"]
+---
+
+After being stuck on getting the pagination for posts for a while, I was able to get it running today without any issue. I created a template for the post list and added some code to the gatsby.node file to create pages with a max of five posts. 
+
+I followed the [Adding Pagination](https://www.gatsbyjs.org/docs/adding-pagination/) guide in the documentation. It meant migrating the code I originally had on the index page to the post-list template and deleting the index page. In order to create the pages dynamically, I needed the list page to be a template.
