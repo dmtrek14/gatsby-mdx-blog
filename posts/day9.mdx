@@ -3,7 +3,34 @@ title: Adding featured images
 date: 2020-01-19
 published: true
 tags: ["images", "enhancements"]
-featuredImage: lcars.jpg
+featuredImage: ./lcars-home.jpg
 ---
 
-Today, I decided to walk through the documentation on [adding images to markdown](https://www.gatsbyjs.org/docs/working-with-images-in-markdown/). I want to get caught up on Challenge number 3.
+
+Today, I decided to walk through the documentation on [adding images to markdown](https://www.gatsbyjs.org/docs/working-with-images-in-markdown/). I want to get caught up on Challenge number 3 so that I will be ready for Challenge number four this week
+
+I added a featuredImage field to the frontmatter. For the moment, I am placing the featured images in the same folder as the posts. I'm using the following query on my post template page:
+
+```js
+mdx(fields: { slug: {eq: $slug } }) {
+    fields {
+      slug
+    }
+    frontmatter {
+      date
+      title
+      tags
+      featuredImage {
+        childImageSharp {
+          fluid(maxWidth: 600, quality: 80) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+    }
+    body
+    excerpt(pruneLength: 100)
+  }
+  ```
+
+  Now I can add a featured image to the post. Next, I might look into showing that image in the list of posts. I like that with the Gatsby Image package, I can control quality and size. For cover images, it will be handy to size everything the same.

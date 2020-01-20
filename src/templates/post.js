@@ -71,9 +71,8 @@ query PostsBySlug($slug: String!){
       tags
       featuredImage {
         childImageSharp {
-          fluid(maxWidth: 800) {
-            src
-            srcSet
+          fluid(maxWidth: 600, quality: 80) {
+            ...GatsbyImageSharpFluid
           }
         }
       }
@@ -82,4 +81,4 @@ query PostsBySlug($slug: String!){
     excerpt(pruneLength: 100)
   }
 }
-  `
+`
