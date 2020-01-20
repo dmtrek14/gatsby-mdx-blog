@@ -2,6 +2,7 @@ import React from "react";
 import { MDXRenderer } from 'gatsby-plugin-mdx';
 import { graphql, Link } from "gatsby";
 import Layout from "../components/layout";
+import Img from "gatsby-image"
 import SEO from "../components/seo";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 
@@ -9,10 +10,12 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 export default ({ data, pageContext })=> {
 const { frontmatter, body, excerpt } = data.mdx;
 const { previous, next } = pageContext;
+let featuredImgFluid = frontmatter.featuredImage.childImageSharp.fluid
 return (
   <Layout>
    <SEO title={frontmatter.title} description={excerpt} />
     <div>
+    <Img fluid={featuredImgFluid} />
       <h1>{frontmatter.title}</h1>
     </div>
     <MDXRenderer>{body}</MDXRenderer>
@@ -66,9 +69,16 @@ query PostsBySlug($slug: String!){
       date
       title
       tags
+      featuredImage {
+        childImageSharp {
+          fluid(maxWidth: 600, quality: 80) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
     }
     body
     excerpt(pruneLength: 100)
   }
 }
-  `
+`

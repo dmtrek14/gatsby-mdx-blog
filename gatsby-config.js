@@ -13,6 +13,15 @@ module.exports = {
       resolve: `gatsby-plugin-mdx`,
       options: {
         extensions: [`.mdx`, `.md`],
+        gatsbyRemarkPlugins: [
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              maxWidth: 800,
+             // path: `${__dirname}/src/images`,
+            },
+          },
+        ],
       },
     },
     {
@@ -27,7 +36,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-starter-default`,
+        name: `gatsby-mdx-blog`,
         short_name: `starter`,
         start_url: `/`,
         display: `minimal-ui`,
