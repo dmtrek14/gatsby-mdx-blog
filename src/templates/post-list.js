@@ -14,13 +14,13 @@ export default ({ data, pageContext }) => {
       <div>
       <h1>My Journey with Gatsby</h1>
       <div className="post-info">
-      <div className="posts"><span className="lcars-link-button-pink">{data.allMdx.totalCount} Posts</span></div>
-      <div className="tags"><Link className="lcars-link-button-purple" to="/tags/">Tags</Link></div>
+        <div className="posts"><span className="lcars-link-button-pink">{data.allMdx.totalCount} Posts</span></div>
+        <div className="tags"><Link className="lcars-link-button-purple" to="/tags/">Tags</Link></div>
       </div>
 
         {data.allMdx.edges.map(
           ({ node}) => (
-            <div key={node.id}>
+            <div key={node.id} className="post-summary">
              
                 <h2> 
                 <Link to={node.fields.slug}>{node.frontmatter.title}</Link>
