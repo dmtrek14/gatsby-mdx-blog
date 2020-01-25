@@ -6,7 +6,6 @@ import SEO from "../components/seo"
 
 
 const AboutPage = () => {
-  
 // Pass the useFormik() hook initial form values and a submit function that will
   // be called when the form is submitted
   const formik = useFormik({
@@ -36,7 +35,6 @@ const AboutPage = () => {
       <button type="submit">Submit</button>
     </form>
   </Layout>
-  )
-}
-
-//export default AboutPage
+  );
+};
+export default AboutPage
