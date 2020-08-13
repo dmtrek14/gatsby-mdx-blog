@@ -1,5 +1,5 @@
 const siteMetadata = {
-  title: `100 Days of Gatsby`,
+    title: `100 Days of Gatsby`,
     description: `Taking the Gatsby challenge.`,
     author: `@dmtrek14`
 };
